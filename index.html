@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="pacman.js" defer></script>
+    <title>Pacman Demo</title>
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+        h3 {
+            color: white;
+            font-family: 'Press Start 2P', cursive
+        }
+        div#container {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* div#world {
+            position: relative;
+        } */
+
+        div.row div{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        div.brick {
+            background-color: slategray;
+        }
+
+        div.coin {
+            background: url("assets/coin.gif") no-repeat center;
+        }
+
+        div#pacman {
+            background: url("assets/pacman.gif") no-repeat center;
+            background-size: cover;
+            background-blend-mode: multiply;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 157px;
+            left: 164px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3>Score: <span id="score">0</span></h3>
+        <!--! div being used to display the map -->
+        <div id="world"></div>
+        <!--! div being used to display pacman sprite -->
+        <div id="pacman"></div>
+    </div>
+        
+
+</body>
+</html>
