@@ -20,10 +20,11 @@ const layout = [
 let map = document.querySelector("#world")
 let pacIcon = document.querySelector("#pacman")
 let pacman = {
-    x: 164,
+    x: 385,
     y: 157
 }
-const step = 24 //todo pixels
+const yStep = 24.25
+const xStep = 24
 
 const displayWorld = () => {
     let output = ''
@@ -63,20 +64,25 @@ displayPacman()
 
 
 document.onkeydown = (e) => {
-    console.log(e.keyCode)
     if (e.keyCode == 37) {
-        pacman.x -= 24
+        pacman.x -= xStep
     }
-    if (e.keyCode == 39) {
-        pacman.x += 24
+    else if (e.keyCode == 39) {
+        pacman.x += xStep
     }
-    if (e.keyCode == 38) {
-        pacman.y -= 24
+    else if (e.keyCode == 38) {
+        pacman.y -= yStep
     }
-    if (e.keyCode == 40) {
-        pacman.y += 24
+    else if (e.keyCode == 40) {
+        pacman.y += yStep
     }
     displayPacman()
+
+    if (layout[pacman.y][pacman.x] == 1) {
+        layout[pacman.y][pacman.x] = 0
+        console.log(map[pacman.y][pacman.x])
+        displayWorld()
+        }
 }
 
 
